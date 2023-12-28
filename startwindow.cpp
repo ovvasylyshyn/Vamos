@@ -25,17 +25,11 @@ StartWindow::StartWindow(QWidget *parent) :
     ui->tabWidget->setTabText(0, "Enter window");
     ui->tabWidget->setTabText(1, "Main window");
     ui->tabWidget->setTabEnabled(1,false);
-    ui->mainWindow->setVisible(false);
+    ui->tabWidget->setTabEnabled(2,false);
+    ui->tabWidget->setTabEnabled(3,false);
+    ui->tabWidget->setTabEnabled(4,false);
+    ui->tabWidget->setTabEnabled(5,false);
     ui->tabWidget->setTabText(2,"Add player");
-   // connect(ui->updatePB, &QPushButton::clicked, this, &Upda)
-//    connect(ui->searchLE, &QLineEdit::textChanged, this, &StartWindow::onSearchTextChanged);
-//    setupModel();
-   // connect(ui->addPB, &QPushButton::clicked, this, &StartWindow::loadPhoto);
-    //connect(ui->addPlayerToTablePB, &QPushButton::clicked, this, &StartWindow::addPlayer);
-  // connect(ui->addPB, &QPushButton::clicked, this, &StartWindow::loadPhoto);
-  //  connect(ui->photoPB, &QPushButton::clicked, this, &StartWindow::on_photoPB_clicked);
-    //connect(ui->signInPB, SIGNAL(clicked()), this, SLOT(on_signInPB_clicked()));
-  //  connect(ui->signUpPB, SIGNAL(clicked()), this, SLOT(on_signUpPB_clicked()));
 
 }
 
@@ -65,13 +59,11 @@ void StartWindow::on_nextPB_clicked()
     int targetTabIndex = 1;
     ui->tabWidget->setCurrentIndex(targetTabIndex);
     ui->tabWidget->setTabEnabled(1,true);
-    ui->mainWindow->setVisible(true);
+     ui->tabWidget->setTabEnabled(2,true);
+     ui->tabWidget->setTabEnabled(3,true);
+     ui->tabWidget->setTabEnabled(4,true);
+      ui->tabWidget->setTabEnabled(5,true);
     ui->tabWidget->setCurrentWidget(ui->mainWindow);
-    QString userLogin = sqlM->getLoginFromDatabase();
-     if (!userLogin.isEmpty()) {;
-    } else {
-        QMessageBox::warning(this, "Попередження", "Будь ласка, зареєструйтеся або увійдіть в систему.");
-    }
 }
 
 void StartWindow::on_addPlayerPB_clicked()
@@ -81,7 +73,6 @@ void StartWindow::on_addPlayerPB_clicked()
 
 void StartWindow::on_tabWidget_tabCloseRequested(int index)
 {
-   // ui->tabWidget->removeTab(2);
     if (index >= 0 && index < ui->tabWidget->count()) {
         ui->tabWidget->removeTab(index);
     }
@@ -98,13 +89,10 @@ void StartWindow::addPlayer() {
     newPlayer.setContractExpiry(ui->clubContractDE->date());
     if (ui->footCB->currentIndex() == 0)
         newPlayer.setPreferredFoot(Foot::LEFT);
-    //newPlayer.setPreferredFoot("Left");
     else if (ui->footCB->currentIndex() == 1)
        newPlayer.setPreferredFoot(Foot::RIGHT);
-    // newPlayer.setPreferredFoot("Right");
     else
        newPlayer.setPreferredFoot(Foot::BOTH);
-      //newPlayer.setPreferredFoot("Both");
     newPlayer.setLeague(ui->leagueLE->text().toStdString());
     newPlayer.setClub(ui->clubLE->text().toStdString());
     newPlayer.setNumber(ui->numberSB->value());
@@ -112,11 +100,11 @@ void StartWindow::addPlayer() {
     loadPhoto(newPlayer);
     bool success = sqlM->inserIntoTablePlayer(newPlayer);
     if (success) {
-        QMessageBox::information(this, "Гравець доданий", "Гравець був успішно доданий до бази даних.");
-        int currentIndex = ui->tabWidget->currentIndex();
-        ui->tabWidget->removeTab(currentIndex);
-        } else {
-        QMessageBox::warning(this, "Помилка", "Помилка при додаванні гравця до бази даних.");
+        QMessageBox::information(this, "Player added", "Player was added to daatabase");
+       ui->tabWidget->currentIndex();
+         ui->tabWidget->setCurrentWidget(ui->mainWindow);
+    } else {
+        QMessageBox::warning(this, "Error", "Something went wrong");
  }
 }
 
@@ -136,17 +124,20 @@ void StartWindow::loadPhoto(Player& newPlayer) {
 
 void StartWindow::on_showPlayersPB_clicked()
 {
-    PhotoModel* modal = sqlM->getAllPlayers();
-    ui->playersTV->setModel(modal);
-    ui->playersTV->verticalHeader()->setDefaultSectionSize(150);
-    ui->showPlayer->show();
+  PhotoModel* model = sqlM->getAllPlayers();
+  QSortFilterProxyModel* proxyModel = new QSortFilterProxyModel(this);
+  proxyModel->setSourceModel(model);
+ ui->playersTV->verticalHeader()->setDefaultSectionSize(150);
+  ui->playersTV->setModel(proxyModel);
+  ui->playersTV->setSortingEnabled(true);
+  int targetTabIndex = 3;
+  ui->tabWidget->setCurrentIndex(targetTabIndex);
 }
 
 void StartWindow::on_addPlayerToTablePB_clicked()
 {
     addPlayer();
 }
-
 
 void StartWindow::on_playersTV_activated(const QModelIndex &index)
 {
@@ -174,58 +165,116 @@ void StartWindow::on_playersTV_activated(const QModelIndex &index)
         qDebug() << "no player`s data";
     }
     ui->updatePB->show();
-
 }
-
-
-
-
-
-
-//void StartWindow::setupModel()
-//{
-//    model = new QSqlQueryModel(this);
-//    ui->playersTV->setModel(model);
-//}
-//void StartWindow::onSearchTextChanged(const QString &text)
-//{
-//    SQLManager sqlM;
-//    QSqlQuery qry = sqlM.searchPlayer(text);
-
-//    if (qry.exec()) {
-//        model->setQuery(qry);
-//    } else {
-//        qDebug() << "Error executingg query:" << qry.lastError().text();
-//    }
-//}
-//void searchPlayer() {
-//    Player player(ui->idL->text(), teamLineEdit->text(), jerseyNumberSpinBox->value());
-
-//    QSqlQuery query = dbManager->searchPlayer(player);
-
-//    if (query.next()) {
-//        // Вивести дані гравця на етикетки
-//        QString playerNameResult = query.value("name").toString();
-//        QString playerScoreResult = query.value("score").toString();
-
-//        nameLabel->setText("Player Name: " + playerNameResult);
-//        scoreLabel->setText("Player Score: " + playerScoreResult);
-//    } else {
-//        // Гравець не знайдений
-//        nameLabel->setText("Player not found");
-//        scoreLabel->clear();
-//    }
-//}
-
-
-
-
-
-
-
 
 void StartWindow::on_updatePB_clicked()
 {
     updateD->show();
+}
+
+void StartWindow::on_deletePB_clicked()
+{
+    DeletePlayer deletePlayerWindow(this, sqlM);
+    deletePlayerWindow.exec();
+}
+
+void StartWindow::on_updateAllPB_clicked()
+{
+    updateAll= new UpdateAllPlayer();
+    updateAll->show();
+}
+
+void StartWindow::addCoach() {
+    Coach newCoach;
+    newCoach.setId(ui->idLE_2->text().toInt());
+    newCoach.setName(ui->nameLE_2->text().toStdString());
+    newCoach.setSurName(ui->surnameLE_2->text().toStdString());
+    newCoach.setLastName(ui->lastNameLE_2->text().toStdString());
+    newCoach.setAge(ui->ageSB_2->value());
+    newCoach.setContractEndDate(ui->contractEndDE_2->date());
+    newCoach.setCoachContractExpiry(ui->coachExpitryDE->date());
+    newCoach.setClub(ui->clubLE_2->text().toStdString());
+    newCoach.setExpirience(ui->experienceSB->value());
+    if (ui->typeCB->currentIndex() == 1)
+        newCoach.setType("Head_coach");
+    else if (ui->typeCB->currentIndex() == 2)
+        newCoach.setType("Assistant coach");
+   else if (ui->typeCB->currentIndex() == 3)
+        newCoach.setType("Physics coach");
+    else if (ui->typeCB->currentIndex() == 4)
+        newCoach.setType("Goalkeper coach");
+    loadPhotoToCoach(newCoach);
+    bool success = sqlM->inserIntoTableCoach(newCoach);
+    if (success) {
+        QMessageBox::information(this, "coach aded", "Coach was added to database");
+         ui->tabWidget->currentIndex();
+          ui->tabWidget->setCurrentWidget(ui->mainWindow);
+    } else {
+        QMessageBox::warning(this, "error", "Something went wrong");
+    }
+}
+
+void StartWindow::loadPhotoToCoach(Coach& newCoach) {
+    QString photoFilePath = QFileDialog::getOpenFileName(nullptr, "Виберіть фотографію", QDir::homePath(), "Desktop (*.png *.jpg *.jpeg)");
+    if (!photoFilePath.isEmpty()) {
+        QPixmap photo(photoFilePath);
+        QByteArray photoData;
+        QBuffer buffer(&photoData);
+        buffer.open(QIODevice::WriteOnly);
+        photo.save(&buffer, "JPG");
+        newCoach.setPhotoData(photoData);
+    } else {
+        qDebug() << "Вибір фотографії скасовано";
+    }
+}
+void StartWindow::on_addPlayerToTablePB_2_clicked()
+{
+    addCoach();
+}
+
+
+void StartWindow::on_addCoachPB_clicked()
+{
+    ui->tabWidget->setCurrentWidget(ui->addCoach);
+}
+
+
+void StartWindow::on_showCoachPB_clicked()
+{
+    PhotoModel* model = sqlM->getAllCoaches();
+    QSortFilterProxyModel* proxyModel = new QSortFilterProxyModel(this);
+    proxyModel->setSourceModel(model);
+    ui->coachTV->verticalHeader()->setDefaultSectionSize(150);
+    ui->coachTV->setModel(proxyModel);
+    ui->coachTV->setSortingEnabled(true);
+    int targetTabIndex = 5;
+    ui->tabWidget->setCurrentIndex(targetTabIndex);
+}
+
+void StartWindow::on_renewContractPB_clicked()
+{
+  renewCoach=new RenewCoachContract;
+    renewCoach->show();
+}
+
+
+void StartWindow::on_updateAllCPB_clicked()
+{
+    updateAllC= new UpdateAllCoach;
+    updateAllC->show();
+}
+
+
+void StartWindow::on_deletePlayerPB_clicked()
+{
+
+    DeleteCoachFromTable deleteCoachWindow(this,sqlM);
+        deleteCoachWindow.exec();
+}
+
+
+void StartWindow::on_quitPB_clicked()
+{
+        QApplication::quit();
 }
 

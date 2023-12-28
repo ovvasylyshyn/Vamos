@@ -4,7 +4,8 @@
 #include <QDialog>
 #include <QSqlDatabase>
 #include "sqlmanager.h"
-
+#include "startwindow.h"
+class StartWindow;
 namespace Ui {
 class SignIn;
 }
@@ -23,6 +24,7 @@ private slots:
 private:
     Ui::SignIn *ui;
      SQLManager *sqlM;
+  StartWindow* startWindow;
 };
 
 #endif // SIGNIN_H

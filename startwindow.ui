@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>500</height>
+    <width>903</width>
+    <height>535</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -31,11 +31,24 @@
    <bool>false</bool>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>VAMOS</string>
   </property>
-  <layout class="QFormLayout" name="formLayout">
-   <item row="0" column="0" colspan="2">
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icona.png</normaloff>icona.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_9">
+   <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>902</width>
+       <height>534</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#FF981F;</string>
+     </property>
      <property name="tabPosition">
       <enum>QTabWidget::North</enum>
      </property>
@@ -43,7 +56,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideNone</enum>
@@ -91,10 +104,20 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="1">
+       <item row="2" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="welocomeL">
+         <property name="font">
+          <font>
+           <family>Huntress</family>
+           <pointsize>48</pointsize>
+           <stylestrategy>PreferDefault</stylestrategy>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);</string>
+         </property>
          <property name="text">
-          <string>Вас вітає vamos. Щоб продовжити, увійдіть в систему.</string>
+          <string>Welcome to VAMOS</string>
          </property>
         </widget>
        </item>
@@ -115,15 +138,73 @@
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="0" column="0">
           <widget class="QPushButton" name="signInPB">
+           <property name="minimumSize">
+            <size>
+             <width>148</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Huntress</family>
+             <pointsize>48</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
            <property name="text">
-            <string>enter</string>
+            <string>Sign In</string>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="signUpPB">
+           <property name="minimumSize">
+            <size>
+             <width>148</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Huntress</family>
+             <pointsize>48</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
            <property name="text">
-            <string>registr</string>
+            <string>Sign Up</string>
            </property>
           </widget>
          </item>
@@ -146,6 +227,35 @@
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <widget class="QPushButton" name="nextPB">
+           <property name="minimumSize">
+            <size>
+             <width>190</width>
+             <height>70</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Huntress</family>
+             <pointsize>48</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
            <property name="text">
             <string>next</string>
            </property>
@@ -185,45 +295,319 @@
       <attribute name="title">
        <string>Tab 2</string>
       </attribute>
-      <widget class="QPushButton" name="showPlayersPB">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>280</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>show players</string>
-       </property>
-      </widget>
-      <widget class="QWidget" name="horizontalLayoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>40</y>
-         <width>441</width>
-         <height>231</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="addPlayerPB">
-          <property name="text">
-           <string>add player</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="addCoachPB">
-          <property name="text">
-           <string>add coach</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="5" column="1">
+        <spacer name="verticalSpacer_10">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="2">
+        <spacer name="verticalSpacer_11">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0">
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="3">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QPushButton" name="addCoachPB">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Add coach</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="showCoachPB">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Show coach</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deletePlayerPB">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Delete coach</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="titleL">
+         <property name="font">
+          <font>
+           <family>Huntress</family>
+           <pointsize>48</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>VAMOS</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QPushButton" name="addPlayerPB">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Add player</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="showPlayersPB">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Show players</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deletePB">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Delete player</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="2">
+        <spacer name="verticalSpacer_12">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="4">
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="quitPB">
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+         </property>
+         <property name="text">
+          <string>Quit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="infoL">
+         <property name="font">
+          <font>
+           <family>Huntress</family>
+           <pointsize>21</pointsize>
+          </font>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;tw-target-text&quot;/&gt;&lt;span style=&quot; font-family:'inherit'; font-size:28px; color:#e8eaed;&quot;&gt;V&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:28px; color:#e8eaed;&quot;&gt;amos is a Ukrainian football agency founded by Vladyslav Vasylyshyn. The company employs the best and most talented Ukrainian players and coaches. Our goal is to develop football together! Join Vamos!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Info</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="addPlayer">
       <attribute name="icon">
@@ -233,423 +617,1403 @@
       <attribute name="title">
        <string>add Player</string>
       </attribute>
-      <widget class="QSpinBox" name="ageSB">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>130</y>
-         <width>42</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="ageL">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>140</y>
-         <width>49</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>age</string>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="contractEndDE">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>20</y>
-         <width>110</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="clubContractDE">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>60</y>
-         <width>110</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="contactEndL">
-       <property name="geometry">
-        <rect>
-         <x>158</x>
-         <y>20</y>
-         <width>81</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>contract end</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="clubContractL">
-       <property name="geometry">
-        <rect>
-         <x>190</x>
-         <y>70</y>
-         <width>49</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="footCB">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>120</y>
-         <width>72</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <item>
-        <property name="text">
-         <string>Left</string>
-        </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="4" column="2">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="addPlayerToTablePB">
+           <property name="minimumSize">
+            <size>
+             <width>72</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Add Photo</string>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item>
-        <property name="text">
-         <string>Right</string>
-        </property>
+       <item row="3" column="3">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
-       <item>
-        <property name="text">
-         <string>Both</string>
-        </property>
+       <item row="4" column="1">
+        <layout class="QFormLayout" name="formLayout_2">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="leagueLE">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter league:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLineEdit" name="clubLE">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter club:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="numberL">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>T-shirt number</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="numberSB">
+             <property name="styleSheet">
+              <string notr="true">QSpinBox {
+    color: black;
+    background-color: white;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="priceLE">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter value:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-      </widget>
-      <widget class="QLabel" name="footL">
-       <property name="geometry">
-        <rect>
-         <x>190</x>
-         <y>120</y>
-         <width>49</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="leagueLE">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>180</y>
-         <width>113</width>
-         <height>24</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="clubLE">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>230</y>
-         <width>113</width>
-         <height>24</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="numberSB">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>170</y>
-         <width>42</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="priceLE">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>230</y>
-         <width>113</width>
-         <height>24</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="addPB">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>270</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>photo</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="numberL">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>180</y>
-         <width>49</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>number</string>
-       </property>
-      </widget>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>110</width>
-         <height>116</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLineEdit" name="idLE"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="nameLE"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="surnameLE"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lastNameLE"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPushButton" name="addPlayerToTablePB">
-       <property name="geometry">
-        <rect>
-         <x>410</x>
-         <y>250</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>add player</string>
-       </property>
-      </widget>
+       <item row="3" column="1" colspan="2">
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="idLE">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter id:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLineEdit" name="nameLE">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter name:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLineEdit" name="surnameLE">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter surname:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLineEdit" name="lastNameLE">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter secondname:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="contactEndL">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+</string>
+             </property>
+             <property name="text">
+              <string>VAMOS contrcact end</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="contractEndDE">
+             <property name="styleSheet">
+              <string notr="true">QDateTimeEdit {
+    color: black;
+    background-color: white;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="clubContractL">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Сlub contract end</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="clubContractDE">
+             <property name="styleSheet">
+              <string notr="true">QDateTimeEdit {
+    color: black;
+    background-color: white;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="footL">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Enter foot</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="footCB">
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    color: black;
+    background-color: white;
+}
+</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Left</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Right</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Both</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="ageL">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Enter age</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="ageSB">
+             <property name="styleSheet">
+              <string notr="true">QSpinBox {
+    color: black;
+    background-color: white;
+}
+
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="1">
+        <spacer name="verticalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="logoL">
+         <property name="font">
+          <font>
+           <family>Huntress</family>
+           <pointsize>48</pointsize>
+           <stylestrategy>PreferDefault</stylestrategy>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>VAMOS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <spacer name="verticalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="showPlayer">
       <attribute name="title">
        <string>show players</string>
       </attribute>
-      <widget class="QTableView" name="playersTV">
-       <property name="geometry">
-        <rect>
-         <x>9</x>
-         <y>9</y>
-         <width>291</width>
-         <height>421</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="idL">
-       <property name="geometry">
-        <rect>
-         <x>420</x>
-         <y>120</y>
-         <width>49</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="surnameL">
-       <property name="geometry">
-        <rect>
-         <x>500</x>
-         <y>60</y>
-         <width>81</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="nameL">
-       <property name="geometry">
-        <rect>
-         <x>490</x>
-         <y>110</y>
-         <width>91</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="lastNameL">
-       <property name="geometry">
-        <rect>
-         <x>520</x>
-         <y>160</y>
-         <width>81</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="ageL_2">
-       <property name="geometry">
-        <rect>
-         <x>500</x>
-         <y>220</y>
-         <width>81</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="contractEndL">
-       <property name="geometry">
-        <rect>
-         <x>510</x>
-         <y>280</y>
-         <width>91</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="leagueL">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>50</y>
-         <width>71</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="clubL">
-       <property name="geometry">
-        <rect>
-         <x>330</x>
-         <y>110</y>
-         <width>91</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="priceL">
-       <property name="geometry">
-        <rect>
-         <x>320</x>
-         <y>180</y>
-         <width>91</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="numberL_2">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>240</y>
-         <width>91</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="clubContractL_2">
-       <property name="geometry">
-        <rect>
-         <x>420</x>
-         <y>180</y>
-         <width>71</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="prefferedFootL">
-       <property name="geometry">
-        <rect>
-         <x>510</x>
-         <y>310</y>
-         <width>49</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="photoL">
-       <property name="geometry">
-        <rect>
-         <x>330</x>
-         <y>280</y>
-         <width>151</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="searchLE">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>10</y>
-         <width>251</width>
-         <height>24</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="updatePB">
-       <property name="geometry">
-        <rect>
-         <x>409</x>
-         <y>360</y>
-         <width>191</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Продовжити контракт</string>
-       </property>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="5" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QLabel" name="LeagueL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>League</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="leagueL">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="titleL_2">
+         <property name="font">
+          <font>
+           <family>Huntress</family>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>VAMOS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QLabel" name="AgeL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Age</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="ageL_2">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="10" column="3" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="updatePB">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Renew contract</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLabel" name="NumberL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Number</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="numberL_2">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="4" rowspan="4">
+        <widget class="QLabel" name="photoL">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLabel" name="lastNameL_2">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Last name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="nameL">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLabel" name="sNameL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>2 name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lastNameL">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" rowspan="9">
+        <widget class="QTableView" name="playersTV">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>200</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="idL_2">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="idL">
+           <property name="minimumSize">
+            <size>
+             <width>20</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="SurnameL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Surname</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="surnameL">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_14">
+         <item>
+          <widget class="QLabel" name="clubContrL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Club contract</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="clubContractL_2">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_15">
+         <item>
+          <widget class="QLabel" name="contractEndL_2">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Vamos contract</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="contractEndL">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_16">
+         <item>
+          <widget class="QLabel" name="ClubL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Club</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="clubL">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_17">
+         <item>
+          <widget class="QLabel" name="PriceL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Price</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="priceL">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="9" column="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_18">
+         <item>
+          <widget class="QLabel" name="FootL">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Foot</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="prefferedFootL">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <stylestrategy>PreferDefault</stylestrategy>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="10" column="1">
+        <widget class="QPushButton" name="updateAllPB">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+         </property>
+         <property name="text">
+          <string>Update player`s data</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="addCoach">
+      <attribute name="title">
+       <string>add Coach</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="3" column="2">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_21">
+           <item>
+            <widget class="QLabel" name="contactEndL_2">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+</string>
+             </property>
+             <property name="text">
+              <string>VAMOS contrcact end</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="contractEndDE_2">
+             <property name="styleSheet">
+              <string notr="true">QDateTimeEdit {
+    color: black;
+    background-color: white;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_22">
+           <item>
+            <widget class="QLabel" name="clubContractL_3">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Сlub contract end</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="coachExpitryDE">
+             <property name="styleSheet">
+              <string notr="true">QDateTimeEdit {
+    color: black;
+    background-color: white;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QComboBox" name="typeCB">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+    color: black;
+    background-color: white;
+}
+</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Coach type</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Head Coach</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Assistant Coach</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Physics Coach</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Goalkeper Coach</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="clubLE_2">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter club:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_20">
+           <item>
+            <widget class="QLabel" name="experL">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Enter experience:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="experienceSB">
+             <property name="styleSheet">
+              <string notr="true">QSpinBox {
+    color: black;
+    background-color: white;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="addPlayerToTablePB_2">
+         <property name="minimumSize">
+          <size>
+           <width>72</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Huntress</family>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+         </property>
+         <property name="text">
+          <string>Add Photo</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>16</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="titleL_3">
+         <property name="font">
+          <font>
+           <family>Huntress</family>
+           <pointsize>48</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>VAMOS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <spacer name="horizontalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="2">
+        <spacer name="verticalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="1">
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="idLE_2">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter id:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLineEdit" name="nameLE_2">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter name:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLineEdit" name="surnameLE_2">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter surname:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLineEdit" name="lastNameLE_2">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Enter secondname:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="QLabel" name="ageL_3">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Enter age</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="ageSB_2">
+             <property name="styleSheet">
+              <string notr="true">QSpinBox {
+    color: black;
+    background-color: white;
+}
+
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="2">
+        <spacer name="verticalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="2">
+        <spacer name="verticalSpacer_13">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="showCoach">
+      <attribute name="title">
+       <string>show Coach</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <widget class="QTableView" name="coachTV"/>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_23">
+         <item>
+          <spacer name="horizontalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="renewContractPB">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Renew Contract</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_12">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="updateAllCPB">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+           </property>
+           <property name="text">
+            <string>Update Data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_11">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>

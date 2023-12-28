@@ -3,9 +3,6 @@
 #include<QPixmap>
 #include <QSqlRecord>
 
-//PhotoModel::PhotoModel()
-//{
-//}
 QVariant PhotoModel::data(const QModelIndex &index, int role) const {
     if (role == Qt::DecorationRole && index.column() == photoColumnIndex) {
         QPixmap photo;

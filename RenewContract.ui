@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UpdateData</class>
+ <widget class="QDialog" name="UpdateData">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>431</width>
+    <height>337</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Renew Contract</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icona.png</normaloff>icona.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#FF981F;</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLineEdit" name="idLE">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Enter id:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="nameLE">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Enter name:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="surnameLE">
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Enter surname:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLabel" name="titleL">
+     <property name="font">
+      <font>
+       <family>Huntress</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Enter player`s id to renew contract with VAMOS</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="contactEndL">
+       <property name="font">
+        <font>
+         <family>Huntress</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>New Contract End:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="contractEndDE">
+       <property name="styleSheet">
+        <string notr="true">QDateTimeEdit {
+    color: black;
+    background-color: white;
+}
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="confirmUpdatePB">
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+       </property>
+       <property name="text">
+        <string>Renew Contract</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="1">
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,10 +1,12 @@
-#ifndef UPDATEDATA_H
-#define UPDATEDATA_H
+#ifndef RENEWCONTRACT_H
+#define RENEWCONTRACT_H
 
 #include <QDialog>
 #include "startwindow.h"
 #include "sqlmanager.h"
 #include "Player.h"
+#include <QMessageBox>
+
 class StartWindow;
 namespace Ui {
 class UpdateData;
@@ -19,7 +21,7 @@ public:
     ~UpdateData();
 
 private slots:
-    void on_updatePB_clicked();
+    void on_confirmUpdatePB_clicked();
 
 private:
     Ui::UpdateData *ui;
@@ -27,4 +29,4 @@ private:
     SQLManager* sqlM;
 };
 
-#endif // UPDATEDATA_H
+#endif // RENEWCONTRACT_H

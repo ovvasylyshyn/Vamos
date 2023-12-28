@@ -7,15 +7,15 @@
 #include "Player.h"
 #include<QSqlQueryModel>
 #include"photomodel.h"
+#include <QDateTime>
+#include "Coach.h"
 
 #define DATABASE_HOST_NAME   "ExampleDataBase"
-#define DATABASE_FILE_NAME   "DataBase3.sqlite"
+#define DATABASE_FILE_NAME   "DataBaseVamos3.sqlite"
 #define TABLE_REGISTRATION                  "registration"
 #define TABLE_LOGIN              "login"
 #define TABLE_PASSWORD              "password"
-
 #define TABLE_NAME_PLAYER "player"
-#define TABLE_NAME_COACH "coach"
 #define TABLE_NAME "name"
 #define TABLE_SURNAME "surname"
 #define TABLE_LASTNAME "lastName"
@@ -32,48 +32,38 @@
 #define TABLE_FOOT_TYPE "footType"
 #define TABLE_PREFERRED_FOOT_ID "footId"
 #define TABLE_PHOTO "photo"
-//Foot preferredFoot;
-
 
 class SQLManager: public DBManager
 {
     QSqlDatabase db;
-
     static SQLManager* instance;
-
-    // Приватний конструктор
-
 
 public:
     static SQLManager* getInstance();
-
-    // Метод для підключення до бази даних
     void connectToDataBase() override;
-
-    // Метод для отримання обробника (хендлера) підключення до БД
     QSqlDatabase getDB() override;
-
-    // Метод для вставки записів у таблицю
    bool inserIntoTableRegistration(const QString login, QString password) override;
-    bool inserIntoTablePlayer(const Player& player);
-
-   SQLManager();
+    bool inserIntoTablePlayer(const Player& player)override;
+    SQLManager();
    bool openDataBase();
    bool restoreDataBase();
    void closeDataBase();
    bool createTables();
    bool userExists(const QString& login) const;
-  // bool validateUser(const QString& login, const QString& password) const;
-   void clearRegistrationTable();
    bool login(QString login, QString password);
- //  bool isUserRegistered(const QString& login);
-   QString getLoginFromDatabase();
-  // QSqlQueryModel* getAllPlayers();
    PhotoModel* getAllPlayers();
+   PhotoModel* getAllCoaches();
    QSqlQuery selectPlayerByPhotoOrName(const QString &value);
-  // QSqlQuery searchPlayer(const QString &searchValue);
-  // QSqlQuery searchPlayer(const  Player &player);
+  // bool deletePlayerFromTable(int playerId);
+  // bool deleteCoachFromTable(int coachId);
+   bool inserIntoTableCoach(const Coach& coach)override;
    bool updatePlayer(const Player& player);
+   bool updateCoach(const Coach& coach);
+
+   bool inserIntoTableDeleteCoach(const Coach& coach);
+   bool deleteCoachFromTable(int coachId, const QString name, const QString surname) ;
+   bool inserIntoTableDeletedPlayer(const Player& player);
+    bool deletePlayerFromTable(int playerId, const QString name, const QString surname);
 };
 
 #endif // SQLMANAGER_H

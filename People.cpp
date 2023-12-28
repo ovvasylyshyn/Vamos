@@ -1,5 +1,4 @@
 #include "People.h"
-//People::People() :name(nullptr), surname(nullptr), lastName(nullptr), age(0), id(0), contractEndDate(0) {};
 People::People(const string& name, const string& surname, const string& lastName, int age, int id, const QDate& contractEndDate)
     : name(name), surname(surname), lastName(lastName), age(age),id(id), contractEndDate(contractEndDate) {}
 
@@ -22,11 +21,6 @@ int People::getAge() const {
 int People::getId() const{
     return id;
 }
-
-//chrono::system_clock::time_point People::getContractEndDate() const {
-//    return contractEndDate;
-//}
-
 QDate People::getContractEndDate() const {
     return contractEndDate;
 }
@@ -46,9 +40,6 @@ void People::setAge(int age) {
 void People::setId(int id) {
     this->id = id;
 }
-//void People::setContractEndDate(const chrono::system_clock::time_point& contractEndDate) {
-//    this->contractEndDate = contractEndDate;
-//}
 void People::setContractEndDate(const QDate& contractEndDate) {
     this->contractEndDate = contractEndDate;
 }

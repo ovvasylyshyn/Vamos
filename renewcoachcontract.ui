@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RenewCoachContract</class>
+ <widget class="QMainWindow" name="RenewCoachContract">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Renew Contract</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icona.png</normaloff>icona.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#FF981F;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="1">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="7" column="2">
+     <widget class="QPushButton" name="confirmUpdatePB">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+      </property>
+      <property name="text">
+       <string>Renew Contract</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLineEdit" name="surnameLE">
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter surname:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="idLE">
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Enter id:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="titleL">
+      <property name="font">
+       <font>
+        <family>Huntress</family>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Enter coach id to renew contract with VAMOS</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLineEdit" name="nameLE">
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="contactEndL">
+        <property name="font">
+         <font>
+          <family>Huntress</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>New Contract End:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="contractEndDE">
+        <property name="styleSheet">
+         <string notr="true">QDateTimeEdit {
+    color: black;
+    background-color: white;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="2">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="3">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="2">
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

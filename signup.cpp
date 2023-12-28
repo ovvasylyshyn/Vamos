@@ -10,6 +10,8 @@ SignUp::SignUp(QWidget *parent) :
     ui->setupUi(this);
     sqlM = new SQLManager;
     sqlM->connectToDataBase();
+   // connect(ui->registrPB, &QPushButton::clicked, startWindow, &StartWindow::show);
+
 }
 
 SignUp::~SignUp()
@@ -34,12 +36,11 @@ void SignUp::on_registrPB_clicked()
 
             sqlM->inserIntoTableRegistration(login,hashedDataString);
             QMessageBox::about(this, "Entrance to system", "Registration was successful");
-            sqlM->clearRegistrationTable();
+            //sqlM->clearRegistrationTable();
     }
     else{QMessageBox::critical(this,"Fail","U have an empty string");}
     ui->loginLE->clear();
     ui->passwordLE->clear();
     this->close();
-
 }
 

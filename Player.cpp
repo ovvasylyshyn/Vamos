@@ -15,9 +15,6 @@ int Player::getNumber() const {
 string Player::getClub() const {
 	return club;
 }
-//chrono::system_clock::time_point Player::getClubContractExpiry() const {
-//	return clubContractExpiry;
-//}
 QDate Player::getClubContractExpiry() const {
     return clubContractExpiry;
 }
@@ -37,10 +34,6 @@ int Player:: getPhotoSize() const{
  QByteArray Player::getPhotoData() const {
     return photoData;
 }
-//int Player::getPreferredFootId() const {
-//    return preferredFootId;
-//}
-
 void Player::setNumber(int number) {
 	this->number = number;
 }
@@ -62,11 +55,7 @@ void  Player:: setPrice(double price) {
 }
 void Player::setPhotoData(const QByteArray& photoData){
     this->photoData=photoData;
-   // this->photoSize = photoData.size();
 }
 void Player:: setPhotoSize(int photoSize){
     this->photoSize=photoSize;
 }
-//void Player::setPhotoPath(const QString& photoPath) {
-//    this->photoPath = photoPath;
-//}

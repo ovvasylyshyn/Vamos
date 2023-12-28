@@ -34,8 +34,6 @@ void SignIn::on_signInPB_clicked()
             if(check)
             {
                 QMessageBox::about(this, "Entrance to system", "Login successful");
-//                emit home();
-
             }
             else  { QMessageBox::critical(this,"Login Failed","Incorrect login or password. Please try again");}
 
@@ -45,13 +43,5 @@ void SignIn::on_signInPB_clicked()
     ui->inLoginLE->clear();
     ui->passwordLE->clear();
     this->close();
-
-//    // Перевірка наявності користувача з введеним логіном і паролем в базі даних
-//    if (sqlM->validateUser(login, password)) {
-//        QMessageBox::about(this, "Entrance to system", "Login successful");
-//        // Тут ви можете виконати додаткові дії, які необхідні після входу
-//    } else {
-//        QMessageBox::warning(this, "Login Failed", "Incorrect login or password. Please try again.");
-//    }
 }
 

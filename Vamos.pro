@@ -15,35 +15,53 @@ SOURCES += \
     Coach.cpp \
     People.cpp \
     Player.cpp \
+    RenewContract.cpp \
     dbmanager.cpp \
+    deletecoach.cpp \
+    deletecoachfromtable.cpp \
+    deleteplayer.cpp \
     main.cpp \
     mainwindow.cpp \
     photomodel.cpp \
+    renewcoachcontract.cpp \
     signin.cpp \
     signup.cpp \
     sqlmanager.cpp \
     startwindow.cpp \
-    updatedata.cpp
+    updateallcoach.cpp \
+    updateallplayer.cpp
 
 HEADERS += \
     Coach.h \
     People.h \
     Player.h \
+    RenewContract.h \
     dbmanager.h \
+    deletecoach.h \
+    deletecoachfromtable.h \
+    deleteplayer.h \
     mainwindow.h \
     photomodel.h \
+    renewcoachcontract.h \
     signin.h \
     signup.h \
     sqlmanager.h \
     startwindow.h \
-    updatedata.h
+    updateallcoach.h \
+    updateallplayer.h
 
 FORMS += \
+    RenewContract.ui \
+    deletecoach.ui \
+    deletecoachfromtable.ui \
+    deleteplayer.ui \
     mainwindow.ui \
+    renewcoachcontract.ui \
     signin.ui \
     signup.ui \
     startwindow.ui \
-    updatedata.ui
+    updateallcoach.ui \
+    updateallplayer.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -61,3 +79,6 @@ macx:OBJECTS_DIR = mac
 CONFIG(release, debug|release) {
     win32:QMAKE_POST_LINK = $$(QTDIR)/bin/windeployqt $$OUT_PWD/release
 }
+
+RESOURCES += \
+    resurs.qrc
