@@ -32,7 +32,7 @@ void UpdateAllPlayer::on_updatePlayerPB_clicked()
         player.setClub(ui->clubLE->text().toStdString());
             player.setNumber(ui->numberSB->value());
             player.setPrice(ui->priceLE->text().toInt());
-    if (sqlM->updatePlayer(player)) {
+    if (sqlM->updatePlayerC(player)) {
         QString message = QString("Data for %1 %2 renewed!")
                               .arg(ui->nameLE->text())
                               .arg(ui->surnameLE->text());
@@ -42,7 +42,7 @@ void UpdateAllPlayer::on_updatePlayerPB_clicked()
         hide();
     } else {
         qDebug() << "Failed to update player";
-        QMessageBox::critical(this, "Renew Contract", "Contract isn't renewed!");
+        QMessageBox::critical(this, "Renew Contract", "data isn`t updated!");
 
     }
 }

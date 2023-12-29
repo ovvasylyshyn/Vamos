@@ -21,27 +21,6 @@
    <string notr="true">background-color:#FF981F;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="deleteIDLE">
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;You need to Enter player id to delete him from database.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid #000000; 
-    background-color: #FFFFFF;
-	color: rgb(0, 0, 0);
-}
-
-QLineEdit:focus {
-    border: 2px solid #FF981F; 
-}</string>
-     </property>
-     <property name="placeholderText">
-      <string>Enter id to delete:</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="1">
     <spacer name="verticalSpacer_3">
      <property name="orientation">
@@ -55,7 +34,29 @@ QLineEdit:focus {
      </property>
     </spacer>
    </item>
-   <item row="7" column="1">
+   <item row="1" column="1">
+    <widget class="QLabel" name="titleL">
+     <property name="font">
+      <font>
+       <family>Huntress</family>
+       <pointsize>48</pointsize>
+      </font>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;VAMOS - Making Football better.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>VAMOS</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
     <widget class="QPushButton" name="deletePlayerPB">
      <property name="font">
       <font>
@@ -82,32 +83,6 @@ QPushButton:hover {
       <string>Delete</string>
      </property>
     </widget>
-   </item>
-   <item row="8" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="6" column="1">
-    <spacer name="verticalSpacer_4">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item row="1" column="2">
     <spacer name="horizontalSpacer_2">
@@ -136,7 +111,51 @@ QPushButton:hover {
     </spacer>
    </item>
    <item row="4" column="1">
-    <widget class="QLineEdit" name="nameLE"/>
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="deleteIDLE">
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;You need to Enter player id to delete him from database.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid #000000; 
+    background-color: #FFFFFF;
+	color: rgb(0, 0, 0);
+}
+
+QLineEdit:focus {
+    border: 2px solid #FF981F; 
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter id to delete:</string>
+     </property>
+    </widget>
    </item>
    <item row="1" column="0">
     <spacer name="horizontalSpacer">
@@ -150,31 +169,6 @@ QPushButton:hover {
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="titleL">
-     <property name="font">
-      <font>
-       <family>Huntress</family>
-       <pointsize>48</pointsize>
-      </font>
-     </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;VAMOS - Making Football better.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>VAMOS</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
-    <widget class="QLineEdit" name="surnameLE"/>
    </item>
   </layout>
  </widget>

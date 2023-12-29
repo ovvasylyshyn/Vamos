@@ -33,7 +33,7 @@ void UpdateAllCoach::on_updateCoachrPB_clicked()
         newCoach.setType("Physics coach");
     else if (ui->typeCB_3->currentIndex() == 4)
         newCoach.setType("Goalkeper coach");
-    if (sqlM->updateCoach(newCoach)) {
+    if (sqlM->UpdateCoachAll(newCoach)) {
         QString message = QString("Data for %1 %2 renewed!")
                               .arg(ui->nameLE_5->text())
                               .arg(ui->surnameLE_5->text());

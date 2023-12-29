@@ -15,13 +15,11 @@ DeleteCoachFromTable::~DeleteCoachFromTable()
 }
 
 void DeleteCoachFromTable::on_deleteCoachPB_clicked()
-{Coach deleted;
+{
     int coachIdToDelete = ui->deleteIDLE->text().toInt();
-    QString coachName = QString::fromStdString(ui->nameLE->text().toStdString());
-    QString coachSurName= QString::fromStdString(ui->surnameLE->text().toStdString());
-    bool success = sqlManager->deleteCoachFromTable(coachIdToDelete,coachName,coachSurName);
+
+    bool success = sqlManager->deleteCoachFromTable(coachIdToDelete);
     if (success) {
-        sqlManager->inserIntoTableDeleteCoach(deleted);
         QMessageBox::information(this, "Coach deleted", "Coach deleted!");
         hide();
     } else {

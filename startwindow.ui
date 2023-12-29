@@ -56,7 +56,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideNone</enum>
@@ -65,7 +65,7 @@
       <bool>false</bool>
      </property>
      <property name="tabsClosable">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="movable">
       <bool>true</bool>
@@ -112,6 +112,9 @@
            <pointsize>48</pointsize>
            <stylestrategy>PreferDefault</stylestrategy>
           </font>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;We are vamos!&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);</string>
@@ -594,7 +597,7 @@ QPushButton:hover {
           </font>
          </property>
          <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;tw-target-text&quot;/&gt;&lt;span style=&quot; font-family:'inherit'; font-size:28px; color:#e8eaed;&quot;&gt;V&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:28px; color:#e8eaed;&quot;&gt;amos is a Ukrainian football agency founded by Vladyslav Vasylyshyn. The company employs the best and most talented Ukrainian players and coaches. Our goal is to develop football together! Join Vamos!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;tw-target-text&quot;/&gt;&lt;span style=&quot; font-family:'inherit'; font-size:28px; color:#000000;&quot;&gt;V&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:28px; color:#000000;&quot;&gt;amos is a Ukrainian football agency founded by Vladyslav Vasylyshyn. The company employs the best and most talented Ukrainian players and coaches. Our goal is to develop football together! Join Vamos!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);</string>

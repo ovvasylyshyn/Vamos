@@ -30,7 +30,6 @@ StartWindow::StartWindow(QWidget *parent) :
     ui->tabWidget->setTabEnabled(4,false);
     ui->tabWidget->setTabEnabled(5,false);
     ui->tabWidget->setTabText(2,"Add player");
-
 }
 
 StartWindow::~StartWindow()
@@ -127,11 +126,25 @@ void StartWindow::on_showPlayersPB_clicked()
   PhotoModel* model = sqlM->getAllPlayers();
   QSortFilterProxyModel* proxyModel = new QSortFilterProxyModel(this);
   proxyModel->setSourceModel(model);
- ui->playersTV->verticalHeader()->setDefaultSectionSize(150);
+ ui->playersTV->verticalHeader()->setDefaultSectionSize(80);
+  ui->playersTV->horizontalHeader()->setDefaultSectionSize(80);
   ui->playersTV->setModel(proxyModel);
   ui->playersTV->setSortingEnabled(true);
   int targetTabIndex = 3;
   ui->tabWidget->setCurrentIndex(targetTabIndex);
+  ui->idL->clear();
+  ui->nameL->clear();
+  ui->surnameL->clear();
+  ui->lastNameL->clear();
+  ui->ageL_2->clear();
+  ui->contractEndL->clear();
+  ui->clubContractL_2->clear();
+  ui->prefferedFootL->clear();
+  ui->leagueL->clear();
+  ui->clubL->clear();
+  ui->numberL_2->clear();
+  ui->priceL->clear();
+  ui->photoL->clear();
 }
 
 void StartWindow::on_addPlayerToTablePB_clicked()
@@ -170,6 +183,20 @@ void StartWindow::on_playersTV_activated(const QModelIndex &index)
 void StartWindow::on_updatePB_clicked()
 {
     updateD->show();
+    ui->idL->clear();
+    ui->nameL->clear();
+    ui->surnameL->clear();
+    ui->lastNameL->clear();
+    ui->ageL_2->clear();
+    ui->contractEndL->clear();
+    ui->clubContractL_2->clear();
+    ui->prefferedFootL->clear();
+    ui->leagueL->clear();
+    ui->clubL->clear();
+    ui->numberL_2->clear();
+    ui->priceL->clear();
+    ui->photoL->clear();
+      ui->tabWidget->setCurrentWidget(ui->mainWindow);
 }
 
 void StartWindow::on_deletePB_clicked()
@@ -182,6 +209,20 @@ void StartWindow::on_updateAllPB_clicked()
 {
     updateAll= new UpdateAllPlayer();
     updateAll->show();
+    ui->idL->clear();
+    ui->nameL->clear();
+    ui->surnameL->clear();
+    ui->lastNameL->clear();
+    ui->ageL_2->clear();
+    ui->contractEndL->clear();
+    ui->clubContractL_2->clear();
+    ui->prefferedFootL->clear();
+    ui->leagueL->clear();
+    ui->clubL->clear();
+    ui->numberL_2->clear();
+    ui->priceL->clear();
+    ui->photoL->clear();
+      ui->tabWidget->setCurrentWidget(ui->mainWindow);
 }
 
 void StartWindow::addCoach() {
@@ -191,6 +232,7 @@ void StartWindow::addCoach() {
     newCoach.setSurName(ui->surnameLE_2->text().toStdString());
     newCoach.setLastName(ui->lastNameLE_2->text().toStdString());
     newCoach.setAge(ui->ageSB_2->value());
+    QDate currentDate = QDate::currentDate();
     newCoach.setContractEndDate(ui->contractEndDE_2->date());
     newCoach.setCoachContractExpiry(ui->coachExpitryDE->date());
     newCoach.setClub(ui->clubLE_2->text().toStdString());
@@ -203,6 +245,9 @@ void StartWindow::addCoach() {
         newCoach.setType("Physics coach");
     else if (ui->typeCB->currentIndex() == 4)
         newCoach.setType("Goalkeper coach");
+    ui->contractEndDE_2->setMaximumDate(currentDate);
+    ui->coachExpitryDE->setMaximumDate(currentDate);
+
     loadPhotoToCoach(newCoach);
     bool success = sqlM->inserIntoTableCoach(newCoach);
     if (success) {
@@ -244,7 +289,7 @@ void StartWindow::on_showCoachPB_clicked()
     PhotoModel* model = sqlM->getAllCoaches();
     QSortFilterProxyModel* proxyModel = new QSortFilterProxyModel(this);
     proxyModel->setSourceModel(model);
-    ui->coachTV->verticalHeader()->setDefaultSectionSize(150);
+    ui->coachTV->verticalHeader()->setDefaultSectionSize(80);
     ui->coachTV->setModel(proxyModel);
     ui->coachTV->setSortingEnabled(true);
     int targetTabIndex = 5;
@@ -255,6 +300,7 @@ void StartWindow::on_renewContractPB_clicked()
 {
   renewCoach=new RenewCoachContract;
     renewCoach->show();
+    ui->tabWidget->setCurrentWidget(ui->mainWindow);
 }
 
 
@@ -262,6 +308,7 @@ void StartWindow::on_updateAllCPB_clicked()
 {
     updateAllC= new UpdateAllCoach;
     updateAllC->show();
+    ui->tabWidget->setCurrentWidget(ui->mainWindow);
 }
 
 

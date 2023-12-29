@@ -11,7 +11,7 @@
 #include "Coach.h"
 
 #define DATABASE_HOST_NAME   "ExampleDataBase"
-#define DATABASE_FILE_NAME   "DataBaseVamos3.sqlite"
+#define DATABASE_FILE_NAME   "DataBaseVamos.sqlite"
 #define TABLE_REGISTRATION                  "registration"
 #define TABLE_LOGIN              "login"
 #define TABLE_PASSWORD              "password"
@@ -39,12 +39,12 @@ class SQLManager: public DBManager
     static SQLManager* instance;
 
 public:
-    static SQLManager* getInstance();
-    void connectToDataBase() override;
-    QSqlDatabase getDB() override;
+   static SQLManager* getInstance();
+   void connectToDataBase() override;
+   QSqlDatabase getDB() override;
    bool inserIntoTableRegistration(const QString login, QString password) override;
-    bool inserIntoTablePlayer(const Player& player)override;
-    SQLManager();
+   bool inserIntoTablePlayer(const Player& player)override;
+   SQLManager();
    bool openDataBase();
    bool restoreDataBase();
    void closeDataBase();
@@ -54,16 +54,13 @@ public:
    PhotoModel* getAllPlayers();
    PhotoModel* getAllCoaches();
    QSqlQuery selectPlayerByPhotoOrName(const QString &value);
-  // bool deletePlayerFromTable(int playerId);
-  // bool deleteCoachFromTable(int coachId);
+   bool deletePlayerFromTable(int playerId);
+   bool deleteCoachFromTable(int coachId);
    bool inserIntoTableCoach(const Coach& coach)override;
    bool updatePlayer(const Player& player);
    bool updateCoach(const Coach& coach);
-
-   bool inserIntoTableDeleteCoach(const Coach& coach);
-   bool deleteCoachFromTable(int coachId, const QString name, const QString surname) ;
-   bool inserIntoTableDeletedPlayer(const Player& player);
-    bool deletePlayerFromTable(int playerId, const QString name, const QString surname);
+   bool updatePlayerC(const Player& player);
+   bool UpdateCoachAll(const Coach& coach);
 };
 
 #endif // SQLMANAGER_H

@@ -21,6 +21,34 @@
    <string notr="true">background-color:#FF981F;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="5" column="1">
+    <widget class="QPushButton" name="deleteCoachPB">
+     <property name="font">
+      <font>
+       <family>Huntress</family>
+       <pointsize>28</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+   background-color: rgb(255, 152, 31);
+color: rgb(0, 0, 0);
+border-color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+border-radius: 6px; 
+}
+
+QPushButton:hover {
+    color: rgb(38, 38, 38)rgb(255, 197, 21); 
+    background-color:#ffc515; 
+    border: 2px solid #ffffff; 
+}</string>
+     </property>
+     <property name="text">
+      <string>DELETE</string>
+     </property>
+    </widget>
+   </item>
    <item row="3" column="2">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
@@ -30,6 +58,19 @@
       <size>
        <width>40</width>
        <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
       </size>
      </property>
     </spacer>
@@ -47,8 +88,30 @@
      </property>
     </spacer>
    </item>
-   <item row="6" column="1">
-    <spacer name="verticalSpacer_2">
+   <item row="1" column="1">
+    <widget class="QLabel" name="titleL">
+     <property name="font">
+      <font>
+       <family>Huntress</family>
+       <pointsize>48</pointsize>
+      </font>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;VAMOS - Making Football better.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>VAMOS</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <spacer name="verticalSpacer_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -81,100 +144,6 @@ QLineEdit:focus {
      </property>
     </widget>
    </item>
-   <item row="8" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="1">
-    <widget class="QLineEdit" name="nameLE">
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid #000000; 
-    background-color: #FFFFFF;
-	color: rgb(0, 0, 0);
-}
-
-QLineEdit:focus {
-    border: 2px solid #FF981F; 
-}</string>
-     </property>
-     <property name="placeholderText">
-      <string>Enter name to delete</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="QPushButton" name="deleteCoachPB">
-     <property name="font">
-      <font>
-       <family>Huntress</family>
-       <pointsize>28</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-   background-color: rgb(255, 152, 31);
-color: rgb(0, 0, 0);
-border-color: rgb(0, 0, 0);
-border: 2px solid rgb(0, 0, 0);
-border-radius: 6px; 
-}
-
-QPushButton:hover {
-    color: rgb(38, 38, 38)rgb(255, 197, 21); 
-    background-color:#ffc515; 
-    border: 2px solid #ffffff; 
-}</string>
-     </property>
-     <property name="text">
-      <string>DELETE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="titleL">
-     <property name="font">
-      <font>
-       <family>Huntress</family>
-       <pointsize>48</pointsize>
-      </font>
-     </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;VAMOS - Making Football better.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>VAMOS</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="1">
     <spacer name="verticalSpacer_4">
      <property name="orientation">
@@ -188,23 +157,18 @@ QPushButton:hover {
      </property>
     </spacer>
    </item>
-   <item row="5" column="1">
-    <widget class="QLineEdit" name="surnameLE">
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid #000000; 
-    background-color: #FFFFFF;
-	color: rgb(0, 0, 0);
-}
-
-QLineEdit:focus {
-    border: 2px solid #FF981F; 
-}</string>
+   <item row="6" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="placeholderText">
-      <string>Enter surname </string>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
      </property>
-    </widget>
+    </spacer>
    </item>
   </layout>
  </widget>

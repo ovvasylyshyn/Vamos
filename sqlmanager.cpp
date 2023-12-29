@@ -8,10 +8,6 @@
 #include <QCryptographicHash>
 #include <QSqlRecord>
 
-//SQLManager::SQLManager()
-//{
-
-//}
 SQLManager* SQLManager::instance = nullptr;
 
 SQLManager::SQLManager() {
@@ -60,7 +56,7 @@ void SQLManager::closeDataBase() {
 }
 
 bool SQLManager::createTables() {
-    QSqlQuery query, query2,query3,query4,query5;
+    QSqlQuery query, query2,query3;
 
     if (!query.exec("CREATE TABLE " TABLE_REGISTRATION " ("
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -112,46 +108,6 @@ if (!query3.exec("CREATE TABLE coach ("
 
         qDebug() << "DataBase: error of create " << "coach";
         qDebug() << query3.lastError().text();
-        return false;
-    } else {
-        qDebug() << "Table coach created successfully.";
-    }
-    if (!query4.exec("CREATE TABLE deleteCoach ("
-                     TABLE_ID  " INTEGER PRIMARY KEY UNIQUE NOT NULL, "
-                     TABLE_NAME " VARCHAR(255) , "
-                     TABLE_SURNAME " VARCHAR(255) , "
-                     TABLE_LASTNAME " VARCHAR(255) , "
-                     TABLE_AGE " INTEGER , "
-                     TABLE_CONTRACTENDDATE " DATE , "
-                     "coach_contract_expiry DATE, "
-                     "club VARCHAR(255), "
-                     "experience VARCHAR(255), "
-                     "type VARCHAR(255), "
-                     "photo BLOB"
-                     ")")) {
-
-        qDebug() << "DataBase: error of create " << "coach";
-        qDebug() << query4.lastError().text();
-        return false;
-    } else {
-        qDebug() << "Table coach created successfully.";
-    }
-    if (!query5.exec("CREATE TABLE deletePlayer ("
-                     TABLE_ID  " INTEGER PRIMARY KEY UNIQUE NOT NULL, "
-                     TABLE_NAME " VARCHAR(255) , "
-                     TABLE_SURNAME " VARCHAR(255) , "
-                     TABLE_LASTNAME " VARCHAR(255) , "
-                     TABLE_AGE " INTEGER , "
-                     TABLE_CONTRACTENDDATE " DATE , "
-                     "coach_contract_expiry DATE, "
-                     "club VARCHAR(255), "
-                     "experience VARCHAR(255), "
-                     "type VARCHAR(255), "
-                     "photo BLOB"
-                     ")")) {
-
-        qDebug() << "DataBase: error of create " << "coach";
-        qDebug() << query5.lastError().text();
         return false;
     } else {
         qDebug() << "Table coach created successfully.";
@@ -241,83 +197,10 @@ query.bindValue(":coach_contract_expiry", coach.getCoachContractExpiry().toStrin
  }
 }
 
-bool SQLManager::inserIntoTableDeleteCoach(const Coach& coach){
+bool SQLManager::deletePlayerFromTable(int playerId) {
  QSqlQuery query;
-// query.prepare("INSERT INTO deleteCoach (name, surname, lastName, age, contractEndDate, coach_contract_expiry, club, experience, type, photo) "
-//               "VALUES (:name, :surname, :lastName, :age, :contractEndDate, :coach_contract_expiry, :club, :experience, :type, :photo)");
-
-// query.bindValue(":name", QString::fromStdString(coach.getName()));
-// query.bindValue(":surname", QString::fromStdString(coach.getSurName()));
-// query.bindValue(":lastName", QString::fromStdString(coach.getLastName()));
-// query.bindValue(":age", coach.getAge());
-// query.bindValue(":contractEndDate", coach.getContractEndDate().toString("yyyy-MM-dd"));
-// query.bindValue(":coach_contract_expiry", coach.getCoachContractExpiry().toString("yyyy-MM-dd"));
-// query.bindValue(":club", QString::fromStdString(coach.getClub()));
-// query.bindValue(":experience",coach.getExpirience());
-// query.bindValue(":type", QString::fromStdString(coach.getType()));
-// query.bindValue(":photo", coach.getPhotoData());
-  query.prepare("INSERT INTO deleteCoach (id, name, surname) "
-                "VALUES (:id, :name, :surname)");
-
- query.bindValue(":id", coach.getId());
-  query.bindValue(":name", QString::fromStdString(coach.getName()));
-  query.bindValue(":surname", QString::fromStdString(coach.getSurName()));
- qDebug() << "Executing query: " << query.lastQuery();
- if (!query.exec()) {
-        qDebug() << "Error inserting coach into table: " << query.lastError().text();
-        return false;
- } else {
-        qDebug() << "Coach inserted successfully!";
-        return true;
- }
-}
-
-bool SQLManager::inserIntoTableDeletedPlayer(const Player& player){
- QSqlQuery query;
- query.prepare("INSERT INTO deletePlayer ("
-               TABLE_ID ", "
-               TABLE_NAME ", "
-               TABLE_SURNAME ") "
-//               TABLE_LASTNAME ", "
-//               TABLE_AGE ", "
-//               TABLE_CONTRACTENDDATE ", "
-//               TABLE_CLUBCONTRACTEXPIRY ", "
-//               TABLE_PREFFERED_FOOT ", "
-//               TABLE_LEAGUE ", "
-//               TABLE_CLUB ", "
-//               TABLE_NUMBER ", "
-//               TABLE_PRICE ", "
-//               TABLE_PHOTO " )"
-               "VALUES (:id, :name, :surname)");
- query.bindValue(":id",player.getId());
- query.bindValue(":name", QString::fromStdString(player.getName()));
- query.bindValue(":surname", QString::fromStdString(player.getSurName()));
-// query.bindValue(":lastName", QString::fromStdString(player.getLastName()));
-// query.bindValue(":age", player.getAge());
-// query.bindValue(":contractEndDate", player.getContractEndDate().toString(Qt::ISODate));
-// query.bindValue(":clubContractExpiry", player.getClubContractExpiry().toString(Qt::ISODate));
-// query.bindValue(":preferredFoot", static_cast<int>(player.getPreferredFoot()));
-// query.bindValue(":league", QString::fromStdString(player.getLeague()));
-// query.bindValue(":club", QString::fromStdString(player.getClub()));
-// query.bindValue(":number", player.getNumber());
-// query.bindValue(":price", QString::number(player.getPrice()));
-// query.bindValue(":photo", player.getPhotoData());
- qDebug() << "Executing query: " << query.lastQuery();
- if (!query.exec()) {
-        qDebug() << "Error inserting player into " << TABLE_NAME_PLAYER << " table";
-        qDebug() << query.lastError().text();
-        qDebug() << query.lastQuery();
-        return false;
- }
- return true;
-}
-
-bool SQLManager::deletePlayerFromTable(int playerId, const QString name, const QString surname) {
- QSqlQuery query;
- query.prepare("DELETE FROM player WHERE id = :id AND name = :name AND surname = :surname");
+ query.prepare("DELETE FROM player WHERE id = :id");
  query.bindValue(":id", playerId);
- query.bindValue(":name", name);
- query.bindValue(":surname", surname);
 
  qDebug() << "Executing query: " << query.lastQuery();
 
@@ -335,12 +218,10 @@ bool SQLManager::deletePlayerFromTable(int playerId, const QString name, const Q
  return true;
 }
 
-bool SQLManager::deleteCoachFromTable(int coachId, const QString name, const QString surname) {
+bool SQLManager::deleteCoachFromTable(int coachId) {
  QSqlQuery query;
- query.prepare("DELETE FROM coach WHERE id = :id AND name = :name AND surname = :surname");
+ query.prepare("DELETE FROM coach WHERE id = :id");
  query.bindValue(":id", coachId);
- query.bindValue(":name", name);
- query.bindValue(":surname", surname);
 
  qDebug() << "Executing query: " << query.lastQuery();
 
@@ -441,18 +322,17 @@ QSqlQuery SQLManager::selectPlayerByPhotoOrName(const QString &value)
 
 bool SQLManager::updatePlayer(const Player& player) {
     QSqlQuery qry;
-    qry.prepare("UPDATE player SET name=:name, surname=:surname, age=:age, clubContractExpiry=:clubContractExpiry, contractEndDate=:contractEndDate, club=:club, "
-                "number=:number, league=:league, price=:price WHERE id=:id");
+    qry.prepare("UPDATE player SET name=:name, contractEndDate=:contractEndDate WHERE id=:id");
     qry.bindValue(":id", player.getId());
     qry.bindValue(":name", QString::fromStdString(player.getName()));
-    qry.bindValue(":surname", QString::fromStdString(player.getSurName()));
-    qry.bindValue(":age", player.getAge());
-    qry.bindValue(":clubContractExpiry", player.getClubContractExpiry());
+//    qry.bindValue(":surname", QString::fromStdString(player.getSurName()));
+//    qry.bindValue(":age", player.getAge());
+//    qry.bindValue(":clubContractExpiry", player.getClubContractExpiry());
     qry.bindValue(":contractEndDate", player.getContractEndDate());
-    qry.bindValue(":club", QString::fromStdString(player.getClub()));
-    qry.bindValue(":number", player.getNumber());
-    qry.bindValue(":league", QString::fromStdString(player.getLeague()));
-    qry.bindValue(":price", player.getPrice());
+//    qry.bindValue(":club", QString::fromStdString(player.getClub()));
+//    qry.bindValue(":number", player.getNumber());
+//    qry.bindValue(":league", QString::fromStdString(player.getLeague()));
+//    qry.bindValue(":price", player.getPrice());
     return qry.exec();
 }
 
@@ -464,4 +344,42 @@ bool SQLManager::updateCoach(const Coach& coach) {
     qry.bindValue(":surname", QString::fromStdString(coach.getSurName()));
     qry.bindValue(":contractEndDate", coach.getContractEndDate());
     return qry.exec();
+}
+
+
+bool SQLManager::updatePlayerC(const Player& player) {
+     QSqlQuery qry;
+    qry.prepare("UPDATE player SET name=:name, surname=:surname,"
+                " age=:age, clubContractExpiry=:clubContractExpiry, contractEndDate=:contractEndDate, "
+                "club=:club, number=:number, league=:league, price=:price WHERE id=:id");
+    qry.bindValue(":id", player.getId());
+    qry.bindValue(":name", QString::fromStdString(player.getName()));
+    qry.bindValue(":surname", QString::fromStdString(player.getSurName()));
+    qry.bindValue(":age", player.getAge());
+    qry.bindValue(":clubContractExpiry", player.getClubContractExpiry());
+    qry.bindValue(":contractEndDate", player.getContractEndDate());
+    qry.bindValue(":club", QString::fromStdString(player.getClub()));
+    qry.bindValue(":number", player.getNumber());
+    qry.bindValue(":league", QString::fromStdString(player.getLeague()));
+    qry.bindValue(":price", player.getPrice());
+
+    return qry.exec();
+}
+
+bool SQLManager::UpdateCoachAll(const Coach& coach){
+    QSqlQuery query;
+    query.prepare("UPDATE coach SET name=:name, surname=:surname,"
+                  " age=:age, coach_contract_expiry=:coach_contract_expiry, contractEndDate=:contractEndDate, "
+                  "club=:club, experience=:experience, type=:type WHERE id=:id");
+    query.bindValue(":id", coach.getId());
+    query.bindValue(":name", QString::fromStdString(coach.getName()));
+    query.bindValue(":surname", QString::fromStdString(coach.getSurName()));
+    query.bindValue(":age", coach.getAge());
+    query.bindValue(":contractEndDate", coach.getContractEndDate().toString("yyyy-MM-dd"));
+    query.bindValue(":coach_contract_expiry", coach.getCoachContractExpiry().toString("yyyy-MM-dd"));
+    query.bindValue(":club", QString::fromStdString(coach.getClub()));
+    query.bindValue(":experience",coach.getExpirience());
+    query.bindValue(":type", QString::fromStdString(coach.getType()));
+    query.bindValue(":photo", coach.getPhotoData());
+    return query.exec();
 }
